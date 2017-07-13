@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/DenisCheremisov/ch-insert/message"
+	"github.com/DenisCheremisov/message"
 )
 
 const (
