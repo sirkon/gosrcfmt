@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/DenisCheremisov/message"
+	"github.com/glossina/message"
 )
 
 const (
