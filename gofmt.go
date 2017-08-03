@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/glossina/message"
+	"github.com/sirkon/message"
 )
 
 const (
