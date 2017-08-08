@@ -19,7 +19,6 @@ const (
  {{ .Cmd }}
  {{ .Split }}
 do not touch it with bare hands!
-Although you perfectly can, just remove this warning first.
 */
 
 {{ .Code }}
