@@ -9,6 +9,8 @@ import (
 	"strings"
 	"text/template"
 
+	"fmt"
+
 	"github.com/sirkon/message"
 )
 
@@ -58,6 +60,14 @@ func Format(dest io.Writer, data []byte) {
 	cmd.Stdout = dest
 	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
+		// Enumerate program
+		lines := strings.Split(program, "\n")
+		depth := len(fmt.Sprint("%d", len(lines)+1)) // For aligned line number printing
+		format := fmt.Sprintf("%%%dd: %%s", depth)
+		for i, line := range lines {
+			lines[i] = fmt.Sprintf(format, i+1, line)
+		}
+		program = strings.Join(lines, "\n")
 		message.Criticalf("%s\n\n---------------------------------------\n%s", program, err)
 	}
 }
