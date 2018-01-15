@@ -55,7 +55,7 @@ func Format(dest io.Writer, data []byte) {
 	}
 	program := buf.String()
 
-	cmd := exec.Command("go", "fmt")
+	cmd := exec.Command("gofmt")
 	cmd.Stdin = strings.NewReader(program)
 	cmd.Stdout = dest
 	cmd.Stderr = os.Stderr
