@@ -24,7 +24,7 @@ const (
 func Format(dest io.Writer, data []byte) {
 	var buf bytes.Buffer
 	buf.WriteString(fmt.Sprintf(header, strings.Join(os.Args, " ")))
-	buf.WriteString("\n")
+	buf.WriteString("\n\n")
 	buf.Write(data)
 
 	var fset token.FileSet
